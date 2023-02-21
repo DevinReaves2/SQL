@@ -1,0 +1,26 @@
+--Create a store owner inventory database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, color TEXT, fabric TEXT, quanity INTEGER, price INTEGER);
+
+INSERT INTO store VALUES (1, "SWEATER", "BLUE", "COTTON", 25, 45);
+INSERT INTO store VALUES (2, "SWEATER", "PINK", "COTTON", 25,45);
+INSERT INTO store VALUES (3, "SWEATER", "PURPLE", "COTTON", 25, 45);
+INSERT INTO store VALUES (4, "BLOUSE", "BLUE", "COTTON", 25, 40);
+INSERT INTO store VALUES (5, "BLOUSE", "PINK", "COTTON", 25, 40);
+INSERT INTO store VALUES (6, "BLOUSE", "PURPLE", "COTTON", 25, 40);
+INSERT INTO store VALUES (7, "SKIRT", "WHITE", "COTTON", 25, 35);
+INSERT INTO store VALUES (8, "SKIRT", "BLACK", "COTTON", 25, 35);
+INSERT INTO store VALUES (9, "SKIRT", "BROWN","COTTON", 25, 35);
+INSERT INTO store VALUES (10, "DRESS", "WHITE", "COTTON", 25, 50);
+INSERT INTO store VALUES (11, "DRESS", "BLACK", "COTTON", 25, 50);
+INSERT INTO store VALUES (12, "DRESS", "PINK", "COTTON", 25, 50);
+INSERT INTO store VALUES (13, "DRESS", "BLUE", "COTTON", 25, 50);
+INSERT INTO store VALUES (14, "DRESS", "PURPLE", "COTTON", 25, 50);
+INSERT INTO store VALUES (15, "DRESS", "YELLOW", "COTTON", 25, 50);
+SELECT * FROM store;
+
+--display the database ordered by price
+SELECT * FROM store ORDER BY price;
+
+--display each item and total cost of all inventory for each item
+SELECT name, SUM(PRICE) FROM store GROUP BY name;
